@@ -1,0 +1,53 @@
+<table>
+    <tr>
+        <td>
+            <h3>id</h3>
+        </td>
+        <td>
+            <h3>name</h3>
+        </td>
+        <td>
+            <h3>username</h3>
+        </td>
+        <td>
+            <h3>email</h3>
+        </td>
+        <td>
+            <h3>address</h3>
+        </td>
+        <td>
+            <h3>phone</h3>
+        </td>
+        <td>
+            <h3>website</h3>
+        </td>
+        <td>
+            <h3>company</h3>
+        </td>
+    </tr>
+
+    <tr *ngFor="let user of users | paginate
+    : {
+        itemsPerPage: tableSize,
+        currentPage: page,
+        totalItems: count
+      };">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.address.city}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.website}}</td>
+        <td>{{user.company.name}}</td>
+    </tr>
+
+</table>
+<div class="d-flex justify-content-center">
+    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+    </pagination-controls>
+</div>
+<button class="btn btn-primary" (click)="showAddress()">Show address</button>
+<div *ngIf="address" class="container m-5 p-5">
+    <router-outlet></router-outlet>
+</div>

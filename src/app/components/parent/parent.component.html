@@ -1,0 +1,12 @@
+<button (click)="onAddMovie()">Add movie</button>
+<input type="text" #movie>
+
+<button (click)="destroy()">Destroy Child</button>
+
+<!-- parent component to child -->
+
+<div class="movies">
+    <app-child *ngIf="!isChildDestroyed" [genreList]="genre" (movieEmit)="onMovieGet($event)">
+        <h1 #child>this is child content from parent</h1>
+    </app-child>
+</div>

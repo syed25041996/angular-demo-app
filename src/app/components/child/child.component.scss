@@ -1,0 +1,50 @@
+.container{
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    background: peachpuff;
+}
+
+.container > *{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+p{
+    font-size: 30px;
+    font-weight: bolder;
+    margin: 1rem 0;
+}
+
+ul{
+    flex: 1;
+    list-style: none;
+    margin:1rem 5rem;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+button{
+    width: 100px;
+    height: 30px;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px black;
+}
+
+button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+button:active {
+    background-color: grey;
+    box-shadow: 0 5px rgb(175, 162, 162);
+    transform: translateY(5px);
+  }

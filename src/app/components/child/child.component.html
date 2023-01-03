@@ -1,0 +1,13 @@
+<button (click)="doNothing()">Do nothing</button>
+
+<p>Movie to be watched</p>
+<div class="container">
+    <ul *ngFor="let genre of genreList">
+        <li>{{genre}}</li>
+        <button (click)="onMovie(genre)">Get movie</button>
+    </ul>
+</div>
+
+<ng-content></ng-content>
+
+<h1 class="child" #childHook>Child content</h1>

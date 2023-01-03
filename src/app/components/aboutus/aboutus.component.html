@@ -1,0 +1,38 @@
+<h1>Custom directive</h1>
+
+<p ngUpper>Hello!</p>
+
+<hr>
+
+<h1>Structural directives</h1>
+
+<section class="emp">
+    <div class="wrapper">
+        <div class="box a">
+            <h1>Id</h1>
+        </div>
+        <div class="box b">
+            <h1>Name</h1>
+        </div>
+        <div class="box c">
+            <h1>Age</h1>
+        </div>
+
+        <ng-container class="row" *ngFor="let e of employees">
+            <div class="🎉">{{e.id}}</div>
+            <div class="🎉">{{e.name}}</div>
+            <div class="🎉">{{e.age}}</div>
+        </ng-container>
+
+        <h4 *ngIf="state">{{color}}</h4>
+
+    </div>
+</section>
+
+<hr>
+
+<h1>Attribute directives</h1>
+
+<p [ngStyle]="{'color': 'Red', 'font-size': '45px', 'font-weight': 'bold'}">Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Totam?</p>
+<p [ngClass]="'mypara'">Hi I am learning angular</p>
